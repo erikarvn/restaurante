@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurente</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<ul class="nav navbar-nav navbar-right">        
+            <% if user_signed_in? %>
+            <p><font color ="Gray">  Sesion Iniciada como <%= current_user.email %>. No eres tu?</font></p> 
+              <li class="">
+                
+               <%= link_to('Cerrar Sesion', '/users/sign_out', :method => :delete) %>         
+              </li>
+            <% else %>
+              <li><a href="/users/sign_in">Ingresar</a></li>
+            <% end %>
+          </ul>
+
+<%= yield %>
+
+</body>
+</html>
