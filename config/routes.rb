@@ -11,6 +11,20 @@ devise_for :users do
 
 
 root 'rols#index'
+
+post '/user/save' => 'rols#save'
+  get '/users/create_user' => 'rols#create_user'
+  get '/users/remove/:id' => 'rols#remove'
+  post '/user' => 'users#create'
+
+
+ get '/admi' => 'rols#admi'
+ get '/asistente' => 'rols#asistente'
+ get '/chef' => 'rols#chef'
+ get '/mesero' => 'rols#mesero'
+ get '/barman' => 'rols#barman'
+ 
+
   # You can have the root of your site routed with "root"
  
   # Example of regular route:
