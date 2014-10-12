@@ -4,4 +4,6 @@ class User < ActiveRecord::Base
   has_one :rols
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+   scope :search, lambda { |search_word| where('users.email LIKE ?', "%#{search_word}%") }       
 end

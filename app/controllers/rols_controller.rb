@@ -140,7 +140,9 @@ def role_chef
     @user=User.new
   end
 
-
+  def cuentas
+    @users = User.all
+  end
 
 
 

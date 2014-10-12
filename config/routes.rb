@@ -12,18 +12,29 @@ devise_for :users do
 
 root 'rols#index'
 
-post '/user/save' => 'rols#save'
+  post '/user/save' => 'rols#save'
   get '/users/create_user' => 'rols#create_user'
   get '/users/remove/:id' => 'rols#remove'
   post '/user' => 'users#create'
 
+  get '/users/edit_user/:id' => 'rols#edit_user'
+
 
  get '/admi' => 'rols#admi'
+ get '/cuentas' => 'rols#cuentas'
+ 
  get '/asistente' => 'rols#asistente'
  get '/chef' => 'rols#chef'
  get '/mesero' => 'rols#mesero'
  get '/barman' => 'rols#barman'
  
+
+  get '/admi/user/role_admi/:id' => 'rols#role_admi', :as => 'role_admi'
+  get '/admi/user/role_asistente/:id' => 'rols#role_asistente', :as => 'role_asistente'
+  get '/admi/user/role_barman/:id' => 'rols#role_barman', :as => 'role_barman'
+  get '/admi/user/role_mesero/:id' => 'rols#role_mesero', :as => 'role_mesero'
+  get '/admi/user/role_chef/:id' => 'rols#role_chef', :as => 'role_chef'
+
 
   # You can have the root of your site routed with "root"
  
