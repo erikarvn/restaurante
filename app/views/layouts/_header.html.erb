@@ -1,0 +1,27 @@
+<header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+	<div class="navbar-inner">
+		<div class="container">
+			<div class="navbar-header">
+				<a href=" <%= root_path %> ">Fogon de Maria</a>
+			</div>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<% if current_user %>
+					<li> <%= link_to 'Mesa', '#' %> </li>
+					<li> <%= link_to 'Receta', '#' %> </li>
+					<li> <%= link_to 'Pedido', '#' %> </li>
+				<% end %>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<% if current_user %>
+					<li> <%= link_to current_user.name.capitalize, edit_registration_path(current_user) %></li>
+            		<li> <%= link_to('Cerrar Sesion', '/users/sign_out', :method => :delete) %> </li>
+          		<%else%>
+            		<li> <%= link_to "Registrarse", new_user_registration_path %> </li>
+            		<li> <%= link_to "Iniciar sesión", new_user_session_path %> </li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</header>

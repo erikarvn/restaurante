@@ -1,6 +1,4 @@
 Restaurente::Application.routes.draw do
-  get "static_pages/home"
-  get "static_pages/help"
   resources :rols
 
 
@@ -9,10 +7,6 @@ Restaurente::Application.routes.draw do
 devise_for :users do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-
-
-
-root 'rols#index'
 
   post '/user/save' => 'rols#save'
   get '/users/create_user' => 'rols#create_user'
@@ -37,6 +31,9 @@ root 'rols#index'
   get '/admi/user/role_mesero/:id' => 'rols#role_mesero', :as => 'role_mesero'
   get '/admi/user/role_chef/:id' => 'rols#role_chef', :as => 'role_chef'
 
+  root 'static_pages#home'
+  match '/help',    to: 'static_pages#help',    via: 'get'
+  match '/contact', to: 'static_pages#contact',  via: 'get'
 
   # You can have the root of your site routed with "root"
  

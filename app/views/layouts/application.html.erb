@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Restaurente</title>
+  <!--meta charset="utf-8"-->
+  <title>Restaurante</title>
+  <!--link rel="stylesheet" href="/app/assets/stylesheets/bootstrap.min.css"-->
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
-
-<ul class="nav navbar-nav navbar-right">        
-            <% if user_signed_in? %>
-            <p><font color ="Gray">  Sesion Iniciada como <%= current_user.email %>. No eres tu?</font></p> 
-              <li class="">
-                
-               <%= link_to('Cerrar Sesion', '/users/sign_out', :method => :delete) %>         
-              </li>
-            <% else %>
-              <li><a href="/users/sign_in">Ingresar</a></li>
-            <% end %>
-          </ul>
-
-<%= yield %>
-
+  <%= render 'layouts/header' %>
+  <div class="container">
+    <br><br><br><br>
+    <%= yield %>
+  </div>
+  <%= render 'layouts/footer' %>
+  
+  <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="/app/assets/javascripts/bootstrap.min.js"></script-->
 </body>
 </html>
