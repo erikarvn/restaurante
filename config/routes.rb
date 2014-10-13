@@ -1,7 +1,9 @@
 Restaurente::Application.routes.draw do
-  resources :receta
 
+  get "static_pages/home"
+  get "static_pages/help"
   resources :rols
+  resources :receta
 
 
   # The priority is based upon order of creation: first created -> highest priority.

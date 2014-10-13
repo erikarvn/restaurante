@@ -147,7 +147,6 @@ def role_chef
 
 
 
-
   # POST /rols
   # POST /rols.json
   def create
