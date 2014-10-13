@@ -51,4 +51,3 @@ ActiveRecord::Schema.define(version: 20141013044832) do
   add_index "users", ["rol_id"], name: "index_users_on_rol_id"
 
 end
-
