@@ -1,0 +1,10 @@
+<h1>Ver Mesa</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @table.state %>
+</p>
+
+<%= link_to 'Editar', edit_table_path(@table) %> |
+<%= link_to 'Atras', tables_path %>

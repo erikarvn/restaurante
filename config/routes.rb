@@ -1,4 +1,6 @@
 Restaurente::Application.routes.draw do
+  resources :tables
+
   resources :rols
   resources :receta
 

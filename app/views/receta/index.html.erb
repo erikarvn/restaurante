@@ -1,6 +1,6 @@
-<h1>Listing receta</h1>
+<h1>Ver Lista de Recetas</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -18,9 +18,9 @@
         <td><%= recetum.nombre %></td>
         <td><%= recetum.preparacion %></td>
         <td><%= recetum.ingredientes %></td>
-        <td><%= link_to 'Show', recetum %></td>
-        <td><%= link_to 'Edit', edit_recetum_path(recetum) %></td>
-        <td><%= link_to 'Destroy', recetum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', recetum %></td>
+        <td><%= link_to 'Editar', edit_recetum_path(recetum) %></td>
+        <td><%= link_to 'Eliminar', recetum, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Recetum', new_recetum_path %>
+<%= link_to 'Nueva Receta', new_recetum_path %>

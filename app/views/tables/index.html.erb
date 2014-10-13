@@ -1,0 +1,27 @@
+<h1>Ver Lista de Mesas</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Estado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tables.each do |table| %>
+      <tr>
+        <td><%= table.state %></td>
+        <td><%= link_to 'Mostrar', table %></td>
+        <td><%= link_to 'Editar', edit_table_path(table) %></td>
+        <td><%= link_to 'Eliminar', table, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nueva Mesa', new_table_path %>
