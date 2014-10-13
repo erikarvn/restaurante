@@ -1,0 +1,31 @@
+<h1>Listing receta</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Preparacion</th>
+      <th>Ingredientes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @receta.each do |recetum| %>
+      <tr>
+        <td><%= recetum.nombre %></td>
+        <td><%= recetum.preparacion %></td>
+        <td><%= recetum.ingredientes %></td>
+        <td><%= link_to 'Show', recetum %></td>
+        <td><%= link_to 'Edit', edit_recetum_path(recetum) %></td>
+        <td><%= link_to 'Destroy', recetum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recetum', new_recetum_path %>
